@@ -1,4 +1,4 @@
-# 🎨 مرسم الفنانة مريم جمال | Mariam Gamal Fine Art Portfolio
+# 🎨 Mariam Gamal — Fine Art Portfolio
 
 <div align="center">
 
@@ -10,139 +10,139 @@
 
 <br />
 
-**موقع ومعرض فني تفاعلي يعرض أعمال ولوحات الفنانة التشكيلية مريم جمال بأحدث معايير الويب والتصميم الجمالي الفاخر.**
+**An interactive fine art portfolio showcasing original oil, acrylic, portrait, and canvas artworks with rich aesthetic design and modern web performance.**
 
-[🌐 زيارة الموقع الحي (Live Demo)](https://portolio-mariam.vercel.app) • [✨ استعراض المعرض](#-معرض-الأعمال) • [🚀 التشغيل المحلي](#-التشغيل-محليا)
+[🌐 Live Demo](https://portolio-mariam.vercel.app) • [✨ Key Features](#-key-features) • [🚀 Getting Started](#-getting-started) • [📂 Project Structure](#-project-structure)
 
 </div>
 
 ---
 
-## 📖 نبذة عن المشروع (About The Project)
+## 📖 Overview
 
-موقع محفظة فنية متكامل (Artist Portfolio Website) صُمم خصيصاً ليعكس روح المرسم الكلاسيكي مع لمسة عصرية راقية. يتميز الموقع بملمس قماش الكانفاس الطبيعي وتأثيرات ألوان مائية حية، مع دعم كامل للغة العربية والاتجاه من اليمين إلى اليسار (RTL).
+This project is a bespoke, high-performance portfolio website created for visual artist **Mariam Gamal**. The design bridges the warmth and texture of a classical painting studio with modern web interaction: tactile canvas textures, organic watercolor bloom animations, refined typography, and full Right-to-Left (RTL) Arabic support.
 
-تمت هندسة الموقع وتقسيمه بدقة إلى ملفات مستقلة نظيفة (**HTML5**, **CSS3**, **JavaScript**, **Tailwind CSS**) مع تحسينات مكثفة للأداء والسرعة وسهولة التصفح.
-
----
-
-## ✨ المميزات الرئيسية (Key Features)
-
-- 🎨 **حامل لوحات تفاعلي (Interactive Easel Slider):**
-  - عرض مميز لأبرز اللوحات مع تأثير انتقال سلس (Crossfade) وتبديل تلقائي وتفاعلي.
-  - إبراز مقاسات اللوحات والخامات المستخدمة وشارات الأعمال المميزة.
-
-- 🖼️ **معرض أعمال متكامل وفلترة سريعة (Gallery Filtering):**
-  - تصفية فورية حسب الفئات: *كل الأعمال، لوحات زيتية، أكريليك، بورتريه وتعبيري، تجريدي*.
-  - تأثير ظهور متحرك (Fade-in) سريع وخفيف.
-
-- 🔍 **نافذة تفاصيل العمل الفني (Artwork Lightbox Modal):**
-  - استعراض اللوحة بدقة عالية.
-  - تفاصيل مقاسات الكانفاس، الخامة، الحالة (متاحة للبيع أو في مقتنيات خاصة).
-  - باليتة الأصباغ المستوحاة من كل عمل فني.
-
-- 📜 **مظهر بصري فريد (Artistic Aesthetic & Textures):**
-  - خلفية نسيج الكانفاس القطني المتداخل.
-  - بقع ألوان مائية متحركة عضوياً (Organic watercolor blobs).
-  - ضربات فرشاة مخصصة للعناوين والروابط النشطة.
-
-- ⚡ **أداء فائق وتحسين الـ Core Web Vitals:**
-  - تحميل مسبق للخطوط والصور الحرجة (`preload`, `preconnect`, `fetchpriority="high"`).
-  - خطوط عربية مميزة (`Cairo`, `Amiri`, `Aref Ruqaa`, `Reem Kufi`) مع تفعيل `display=swap`.
-  - تحسين تمرير القائمة التفاعلية (ScrollSpy) باستخدام `requestAnimationFrame` لمنع التقطيع.
-
-- 📱 **متجاوب بالكامل (Fully Responsive):**
-  - متوافق مع كافة الأجهزة وشاشات الجوال والأجهزة اللوحية والحواسيب المكتبية.
-  - قائمة ملاحة جانبية للشاشات الصغيرة.
-
-- 💌 **نموذج حجز وتكليف فني (Art Commission Form):**
-  - إمكانية طلب لوحة مخصصة بحجم ونوع محدد بسهولة.
+The codebase is cleanly decoupled into modular, maintainable files (**HTML5**, **CSS3**, **JavaScript**, **Tailwind CSS**) engineered for high speed, smooth 60fps animations, and optimal Core Web Vitals.
 
 ---
 
-## 🛠️ التقنيات المستخدمة (Tech Stack)
+## ✨ Key Features
 
-| التقنية | الاستخدام |
+- 🎨 **Interactive Easel Hero Slider:**
+  - Dynamic crossfade transitions between spotlighted artworks with auto-play and manual controls.
+  - Interactive artwork metadata (title, medium, dimensions, and curator badges).
+
+- 🖼️ **Dynamic Gallery Filtering:**
+  - Instant client-side filtering across collections: *All, Oil Paintings, Acrylic, Portraits & Expressionism, Abstract*.
+  - Smooth fade-in transitions between category switches.
+
+- 🔍 **High-Resolution Artwork Lightbox Modal:**
+  - Expanded view with artwork specifications (medium, canvas size, availability status).
+  - Custom color pigment palette indicators extracted from each featured painting.
+
+- 📜 **Artistic Design & Micro-Interactions:**
+  - Subtle woven canvas cotton texture overlay.
+  - Fluid, morphing organic watercolor blobs.
+  - Painterly brush-stroke highlights under active navigation items and section headings.
+
+- ⚡ **Performance & Core Web Vitals Optimization:**
+  - Resource preloading for critical assets (`preconnect`, `preload`, `fetchpriority="high"` for LCP images).
+  - Optimized Google Fonts loading with `display=swap` to eliminate FOIT (Flash of Invisible Text).
+  - ScrollSpy navigation throttled via `requestAnimationFrame` for buttery-smooth scrolling.
+
+- 📱 **Fully Responsive & RTL First:**
+  - Seamless layout adaptation across mobile, tablet, laptop, and ultra-wide screens.
+  - Responsive mobile drawer menu with smooth toggle interaction.
+
+- 💌 **Custom Art Commission Form:**
+  - Dedicated interactive form allowing art collectors and clients to request custom commissions.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Role |
 |---|---|
-| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | البنية الهيكلية ودلالات الويب (Semantic HTML5) ودعم كامل للـ RTL |
-| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | الأنماط المخصصة، نسيج الكانفاس، الحركات الانسيابية، ومتغيرات الألوان |
-| ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) | التنسيق الشبكي السريع ونظام المسافات والألوان |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | السلايدر التفاعلي، نظام الفلترة، النافذة المنبثقة، وتتبع التمرير |
-| ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) | الاستضافة والنشر السحابي المستمر (CI/CD) |
-| ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) | إدارة الإصدارات والتحكم في الكود |
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | Semantic structure, accessibility, and RTL orientation |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | Canvas texture filters, fluid keyframe animations, and custom CSS variables |
+| ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) | Utility-first responsive grid layouts and rapid component styling |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Easel slider, modal lightboxes, filtering logic, and scroll-spy observer |
+| ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) | Continuous deployment, CDN edge hosting, and automatic HTTPS |
+| ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) | Version control and workflow management |
 
 ---
 
-## 📂 هيكل المشروع (Project Structure)
+## 📂 Project Structure
 
 ```plaintext
-Portolio_Mariam/
-├── index.html          # هيكل الصفحة الرئيسي ودلالات العناصر
-├── styles.css          # ملف الأنماط المخصصة، مؤثرات الكانفاس والألوان المائية
-├── script.js           # منطق الجافاسكريبت (السلايدر، الفلترة، النافذة المنبثقة، ScrollSpy)
-├── tailwind.config.js  # إعدادات وتخصيصات سمة Tailwind
-├── .gitignore          # استثناء الملفات غير المرغوبة من Git
-└── README.md           # دليل وثائق المشروع
+portolio_mariam/
+├── index.html          # Semantic HTML markup and layout
+├── styles.css          # Custom styles, canvas texture, and watercolor animations
+├── script.js           # Client-side JavaScript (Slider, Modal, Filters, ScrollSpy)
+├── tailwind.config.js  # Custom theme extensions and color palette configuration
+├── .gitignore          # Files excluded from version control
+└── README.md           # Project documentation and guide
 ```
 
 ---
 
-## 🚀 التشغيل محلياً (Getting Started Locally)
+## 🚀 Getting Started
 
-لتشغيل المشروع على جهازك المحلي، اتبع الخطوات البسيطة التالية:
+No package manager or build pipeline is required to run this project locally.
 
-### 1. استنساخ المستودع (Clone Repository)
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/demianeid/portolio_mariam.git
 cd portolio_mariam
 ```
 
-### 2. فتح الموقع
-المشروع عبارة عن موقع ثابت (Static Website) لا يحتاج إلى تثبيت حزم أو خوادم خلفية:
-- يمكنك فتح ملف `index.html` مباشرة بالنقر المزدوج في أي متصفح ويب.
-- أو تشغيله بواسطة إضافة **Live Server** في VS Code / Antigravity IDE.
-- أو عبر خادم محلي سريع باستخدام Python:
+### 2. Run Locally
+- **Option A:** Open `index.html` directly in your favorite web browser.
+- **Option B:** Use VS Code / Antigravity **Live Server** extension.
+- **Option C:** Spin up a lightweight local server:
   ```bash
-  python -m http.server 8080
+  # Using Python 3
+  python -m http.server 8000
   ```
-  ثم زيارة: `http://localhost:8080`
+  Then visit [http://localhost:8000](http://localhost:8000) in your browser.
 
 ---
 
-## 🎨 باليتة ألوان المرسم (Brand Color Palette)
+## 🎨 Studio Color Palette
 
 ```css
 :root {
-    --art-primary:   #b85d34; /* تيراكوتا دافئ وطين فخاري */
-    --art-secondary: #24584e; /* زيتي أندلسي عميق */
-    --art-gold:      #c8963e; /* لمسات ورنيش وذهب عتيق */
-    --art-canvas:    #faf7f2; /* بياض الكانفاس الطبيعي */
-    --art-paper:     #fffefb; /* ورق الرسم والقطن */
-    --art-ink:       #221d1a; /* حبر رسم فحمي عميق */
+  --art-primary:   #b85d34; /* Warm Terracotta & Clay */
+  --art-secondary: #24584e; /* Andalusian Deep Olive Green */
+  --art-gold:      #c8963e; /* Varnish & Antique Gold */
+  --art-canvas:    #faf7f2; /* Natural Linen & Canvas White */
+  --art-paper:     #fffefb; /* Crisp Cotton Paper */
+  --art-ink:       #221d1a; /* Deep Charcoal & Raw Umber */
 }
 ```
 
 ---
 
-## 🌐 النشر والاستضافة (Deployment)
+## 🌐 Deployment
 
-المشروع مربوط تلقائياً بـ **Vercel**؛ أي تعديل يتم دفعه إلى فرع `main` يُعاد نشره تلقائياً:
+The repository is linked directly to **Vercel** with continuous deployment enabled. Any push to the `main` branch automatically triggers an optimized production build:
+
 ```bash
 git add .
-git commit -m "update: enhancements"
+git commit -m "feat: your update message"
 git push origin main
 ```
 
-الرابط المباشر للإنتاج: **[https://portolio-mariam.vercel.app](https://portolio-mariam.vercel.app)**
+- **Production URL:** [https://portolio-mariam.vercel.app](https://portolio-mariam.vercel.app)
 
 ---
 
-## 📜 الترخيص (License)
+## 📜 License
 
-هذا المشروع متاح تحت رخصة [MIT](LICENSE) - يمكنك استخدامه والاستفادة منه بحرية مع الإشارة للمصدر.
+This project is licensed under the [MIT License](LICENSE) — feel free to use and customize it with attribution.
 
 ---
 
 <div align="center">
-  صُنع بشغف لمرسم الفنانة <b>مريم جمال</b> 🖌️✨
+  Crafted with passion for <b>Mariam Gamal Studio</b> 🖌️✨
 </div>

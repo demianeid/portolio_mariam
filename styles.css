@@ -1,0 +1,184 @@
+/* ===================================================
+   مرسم الفنانة مريم جمال | ملف الأنماط الرئيسي
+   styles.css
+   =================================================== */
+
+/* ---- متغيرات الألوان الفنية (CSS Custom Properties) ---- */
+:root {
+    --art-primary: #b85d34;       /* Terracotta / تيرا كوتا - اللون الأساسي */
+    --art-primary-rgb: 184, 93, 52;
+    --art-secondary: #24584e;
+    --art-gold: #c8963e;
+    --art-canvas: #faf7f2;
+    --art-paper: #fffefb;
+    --art-ink: #221d1a;
+}
+
+/* ---- خلفية ملمس الكانفاس ونسيج قماش اللوحات ---- */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--art-canvas);
+    color: var(--art-ink);
+    background-image:
+        radial-gradient(var(--art-gold) 0.5px, transparent 0.5px),
+        radial-gradient(var(--art-primary) 0.5px, var(--art-canvas) 0.5px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-blend-mode: multiply;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+}
+
+/* ---- تأثير نسيج الكانفاس القطني المتداخل ---- */
+.canvas-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* ---- بقع ألوان مائية ناعمة متطايرة - محسّنة للأداء ---- */
+.watercolor-blob {
+    position: absolute;
+    border-radius: 43% 57% 70% 30% / 30% 61% 39% 70%;
+    filter: blur(48px);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+    animation: organicMorph 20s ease-in-out infinite alternate;
+    contain: strict;
+}
+
+@keyframes organicMorph {
+    0%   { border-radius: 43% 57% 70% 30% / 30% 61% 39% 70%; transform: rotate(0deg)  scale(1);    }
+    50%  { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(8deg)  scale(1.05); }
+    100% { border-radius: 35% 65% 55% 45% / 45% 55% 45% 55%; transform: rotate(-5deg) scale(0.96); }
+}
+
+/* ---- تعطيل الحركات لمن يُفضّل تقليلها (prefers-reduced-motion) ---- */
+@media (prefers-reduced-motion: reduce) {
+    .watercolor-blob              { animation: none; }
+    .brush-highlight::before      { transition: none; }
+    *                             { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* ---- ضربة فرشاة خلف العناوين ---- */
+.brush-highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+.brush-highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: -4%;
+    width: 108%;
+    height: 38%;
+    background: linear-gradient(95deg, rgba(var(--art-primary-rgb), 0.28) 0%, rgba(200, 150, 62, 0.35) 100%);
+    border-radius: 12px 24px 8px 18px;
+    transform: rotate(-1.2deg);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+.brush-highlight:hover::before {
+    height: 50%;
+    transform: rotate(-0.5deg) scale(1.02);
+}
+
+/* ---- إطار اللوحة المعلقة على حامل اللوحات (Art Gallery Frame) ---- */
+.art-frame-wood {
+    box-shadow:
+        0 0 0 10px #2d1810,
+        0 0 0 13px #bfa15f,
+        0 0 0 20px #1e100a,
+        0 25px 50px -12px rgba(0, 0, 0, 0.45);
+}
+
+.art-frame-gold {
+    box-shadow:
+        0 0 0 8px #845318,
+        0 0 0 11px #dfb658,
+        0 0 0 16px #664112,
+        0 20px 40px -10px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- حامل اللوحات الخشبي الواقعي (Easel Styles) ---- */
+.easel-mast {
+    width: 14px;
+    background: linear-gradient(to right, #542b14, #7a3e1d, #542b14);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+.easel-leg-left {
+    width: 12px;
+    background: linear-gradient(to right, #4c2612, #6e371a, #4c2612);
+    transform: rotate(14deg);
+    transform-origin: top center;
+}
+.easel-leg-right {
+    width: 12px;
+    background: linear-gradient(to right, #4c2612, #6e371a, #4c2612);
+    transform: rotate(-14deg);
+    transform-origin: top center;
+}
+.easel-shelf {
+    background: linear-gradient(to bottom, #874720, #5c2f16);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    border-radius: 4px;
+}
+
+/* ---- ختم الشمع الفني الملكي ---- */
+.wax-seal {
+    background: radial-gradient(circle, #b91c1c 20%, #991b1b 70%, #7f1d1d 100%);
+    box-shadow: 0 4px 10px rgba(185, 28, 28, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    border: 2px dashed rgba(254, 202, 202, 0.4);
+}
+
+/* ---- علامة ورق الكانسون / الإسكتش مع دبابيس ---- */
+.sketch-card {
+    background-color: #fffdfa;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.05),
+        0 10px 25px -5px rgba(50, 30, 10, 0.08);
+    border: 1px solid rgba(210, 190, 165, 0.4);
+}
+
+/* ---- خطوط كراسة الرسم الفنية (Washi Tape effect) ---- */
+.washi-tape {
+    background: rgba(230, 205, 170, 0.65);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transform: rotate(-3deg);
+    backdrop-filter: blur(2px);
+}
+
+/* ---- ضربة فرشاة تحت الروابط عند التحويم (Active Nav) ---- */
+.nav-link-brush {
+    position: relative;
+    transition: color 0.25s ease;
+}
+.nav-link-brush::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to left, var(--art-primary), var(--art-gold));
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link-brush:hover::after,
+.nav-link-brush.active::after {
+    width: 100%;
+}
+.nav-link-brush.active {
+    color: var(--art-primary) !important;
+    font-weight: 700;
+}
+
+/* ---- خط التمرير الفني المخصص ---- */
+::-webkit-scrollbar              { width: 10px; }
+::-webkit-scrollbar-track        { background: #f1ede4; }
+::-webkit-scrollbar-thumb        { background: #cf9b44; border-radius: 5px; border: 2px solid #f1ede4; }
+::-webkit-scrollbar-thumb:hover  { background: #b85d34; }

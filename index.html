@@ -1,0 +1,1254 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth overflow-x-hidden scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرسم الفنانة مريم جمال | فن تشكيلي، رسم زيتي وكانفاس</title>
+    <meta name="description" content="الموقع والمعرض الفني الرسمي للفنانة التشكيلية مريم جمال - لوحات زيتية، أكريليك، بورتريه، وتكليفات فنية خاصة تنبض بالحياة والمشاعر.">
+
+    <!-- Resource Hints: تحميل مسبق للموارد الحرجة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <!-- تحميل مسبق للصورة الرئيسية (LCP) -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=85" fetchpriority="high">
+
+    <!-- خطوط جوجل: تحميل مسبق + display=swap لتجنب FOIT -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- إعدادات Tailwind المخصصة -->
+    <script src="tailwind.config.js"></script>
+
+    <!-- الأنماط الخارجية -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --art-primary: #b85d34;
+            --art-primary-rgb: 184, 93, 52;
+            --art-secondary: #24584e;
+            --art-gold: #c8963e;
+            --art-canvas: #faf7f2;
+            --art-paper: #fffefb;
+            --art-ink: #221d1a;
+        }
+
+        /* خلفية ملمس الكانفاس ونسيج قماش اللوحات */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--art-canvas);
+            color: var(--art-ink);
+            background-image: 
+                radial-gradient(var(--art-gold) 0.5px, transparent 0.5px),
+                radial-gradient(var(--art-primary) 0.5px, var(--art-canvas) 0.5px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            background-blend-mode: multiply;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease;
+        }
+
+        /* تأثير نسيج الكانفاس القطني المتداخل */
+        .canvas-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+        }
+
+        /* بقع ألوان مائية ناعمة متطايرة - محسّنة للأداء */
+        .watercolor-blob {
+            position: absolute;
+            border-radius: 43% 57% 70% 30% / 30% 61% 39% 70%;
+            filter: blur(48px);
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 0;
+            will-change: transform;
+            animation: organicMorph 20s ease-in-out infinite alternate;
+            contain: strict;
+        }
+
+        @keyframes organicMorph {
+            0% { border-radius: 43% 57% 70% 30% / 30% 61% 39% 70%; transform: rotate(0deg) scale(1); }
+            50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(8deg) scale(1.05); }
+            100% { border-radius: 35% 65% 55% 45% / 45% 55% 45% 55%; transform: rotate(-5deg) scale(0.96); }
+        }
+
+        /* تعطيل الحركات لمن يُفضّل تقليلها (prefers-reduced-motion) */
+        @media (prefers-reduced-motion: reduce) {
+            .watercolor-blob { animation: none; }
+            .brush-highlight::before { transition: none; }
+            * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+        }
+
+        /* ضربة فرشاة خلف العناوين */
+        .brush-highlight {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        .brush-highlight::before {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: -4%;
+            width: 108%;
+            height: 38%;
+            background: linear-gradient(95deg, rgba(var(--art-primary-rgb), 0.28) 0%, rgba(200, 150, 62, 0.35) 100%);
+            border-radius: 12px 24px 8px 18px;
+            transform: rotate(-1.2deg);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        .brush-highlight:hover::before {
+            height: 50%;
+            transform: rotate(-0.5deg) scale(1.02);
+        }
+
+        /* إطار اللوحة المعلقة على حامل اللوحات (Art Gallery Frame) */
+        .art-frame-wood {
+            box-shadow: 
+                0 0 0 10px #2d1810,
+                0 0 0 13px #bfa15f,
+                0 0 0 20px #1e100a,
+                0 25px 50px -12px rgba(0, 0, 0, 0.45);
+        }
+
+        .art-frame-gold {
+            box-shadow: 
+                0 0 0 8px #845318,
+                0 0 0 11px #dfb658,
+                0 0 0 16px #664112,
+                0 20px 40px -10px rgba(0, 0, 0, 0.35);
+        }
+
+        /* حامل اللوحات الخشبي الواقعي (Easel Styles) */
+        .easel-mast {
+            width: 14px;
+            background: linear-gradient(to right, #542b14, #7a3e1d, #542b14);
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            border-radius: 3px;
+        }
+        .easel-leg-left {
+            width: 12px;
+            background: linear-gradient(to right, #4c2612, #6e371a, #4c2612);
+            transform: rotate(14deg);
+            transform-origin: top center;
+        }
+        .easel-leg-right {
+            width: 12px;
+            background: linear-gradient(to right, #4c2612, #6e371a, #4c2612);
+            transform: rotate(-14deg);
+            transform-origin: top center;
+        }
+        .easel-shelf {
+            background: linear-gradient(to bottom, #874720, #5c2f16);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            border-radius: 4px;
+        }
+
+        /* ختم الشمع الفني الملكي */
+        .wax-seal {
+            background: radial-gradient(circle, #b91c1c 20%, #991b1b 70%, #7f1d1d 100%);
+            box-shadow: 0 4px 10px rgba(185, 28, 28, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+            border: 2px dashed rgba(254, 202, 202, 0.4);
+        }
+
+        /* علامة ورق الكانسون / الإسكتش مع دبابيس */
+        .sketch-card {
+            background-color: #fffdfa;
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.05),
+                0 10px 25px -5px rgba(50, 30, 10, 0.08);
+            border: 1px solid rgba(210, 190, 165, 0.4);
+        }
+
+        /* خطوط كراسة الرسم الفنية (Spiral or Tape effect) */
+        .washi-tape {
+            background: rgba(230, 205, 170, 0.65);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            backdrop-filter: blur(2px);
+        }
+
+        /* ضربة فرشاة تحت الروابط عند التحويم وحالة القسم النشط (Active Nav) */
+        .nav-link-brush {
+            position: relative;
+            transition: color 0.25s ease;
+        }
+        .nav-link-brush::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to left, var(--art-primary), var(--art-gold));
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-link-brush:hover::after,
+        .nav-link-brush.active::after {
+            width: 100%;
+        }
+        .nav-link-brush.active {
+            color: var(--art-primary) !important;
+            font-weight: 700;
+        }
+
+        /* خط التمرير الفني المخصص */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1ede4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cf9b44;
+            border-radius: 5px;
+            border: 2px solid #f1ede4;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b85d34;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#b85d34] selection:text-white canvas-texture antialiased">
+
+    <!-- بقع ألوان مائية وخلفيات فنية حيوية مستوحاة من التيرا كوتا -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="watercolor-blob w-[520px] h-[520px] -top-32 -right-32 bg-[#b85d34]"></div>
+        <div class="watercolor-blob w-[620px] h-[620px] top-[30%] -left-48 bg-[#c85a32]"></div>
+        <div class="watercolor-blob w-[480px] h-[480px] top-[60%] right-[-10%] bg-amber-700"></div>
+        <div class="watercolor-blob w-[550px] h-[550px] bottom-10 left-[-5%] bg-[#a04724]"></div>
+    </div>
+
+    <!-- Header / شريط التنقل الفني الثابت (Fixed Header) -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 w-full z-50 bg-[#fffdfa]/95 backdrop-blur-md border-b border-amber-900/10 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- الشعار: لوحة خشبية وريشة فنان -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-700 via-amber-600 to-amber-500 p-0.5 shadow-md group-hover:rotate-6 transition-transform">
+                    <div class="w-full h-full bg-[#fcf9f2] rounded-[14px] flex items-center justify-center text-2xl">
+                        🎨
+                    </div>
+                </div>
+                <div>
+                    <span class="block text-2xl font-art font-bold text-amber-950 tracking-wide">
+                        مريم جمال
+                    </span>
+                    <span class="block text-[11px] font-semibold text-amber-700 tracking-wider font-sans">
+                        مرسم الفنون التشكيلية • FINE ART ATELIER
+                    </span>
+                </div>
+            </a>
+
+            <!-- روابط التنقل بروح فنية لسطح المكتب -->
+            <nav id="desktop-nav" class="hidden lg:flex items-center gap-8 text-base font-semibold text-amber-950/80">
+                <a href="#about" class="nav-link-brush py-1 hover:text-[var(--art-primary)] transition">نبذة عني</a>
+                <a href="#gallery" class="nav-link-brush py-1 hover:text-[var(--art-primary)] transition">المعرض الفني</a>
+                <a href="#services" class="nav-link-brush py-1 hover:text-[var(--art-primary)] transition">الخدمات</a>
+                <a href="#contact" class="nav-link-brush py-1 hover:text-[var(--art-primary)] transition">تواصل معي</a>
+            </nav>
+
+            <!-- زر التكليف الفني وقائمة الموبايل -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-gradient-to-l from-[var(--art-primary)] to-[var(--art-gold)] text-white font-bold text-sm hover:shadow-lg hover:shadow-[var(--art-primary)]/25 hover:-translate-y-0.5 transition-all duration-300 items-center gap-2 border border-amber-300/30">
+                    <span>طلب لوحة خاصة</span>
+                </a>
+
+                <!-- زر القائمة للشاشات الصغيرة -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden w-11 h-11 rounded-xl bg-amber-100/70 text-amber-950 flex items-center justify-center text-xl border border-amber-900/15 hover:bg-amber-200/70 transition" aria-label="فتح القائمة">
+                    <span id="menu-icon">☰</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- قائمة التنقل المنسدلة للشاشات الصغيرة (Mobile Menu) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#fffdfa]/98 border-b border-amber-900/15 px-6 py-5 shadow-xl backdrop-blur-lg">
+            <nav class="flex flex-col gap-3 text-base font-bold text-amber-950/90">
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link-brush py-2 border-b border-amber-900/10 hover:text-[var(--art-primary)] transition">نبذة عني</a>
+                <a href="#gallery" onclick="toggleMobileMenu()" class="nav-link-brush py-2 border-b border-amber-900/10 hover:text-[var(--art-primary)] transition">المعرض الفني</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="nav-link-brush py-2 border-b border-amber-900/10 hover:text-[var(--art-primary)] transition">الخدمات</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="nav-link-brush py-2 hover:text-[var(--art-primary)] transition">تواصل معي</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="sm:hidden mt-2 text-center py-3 rounded-xl bg-gradient-to-l from-[var(--art-primary)] to-[var(--art-gold)] text-white font-bold text-sm shadow">
+                    طلب لوحة خاصة
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section / القسم الرئيسي - في قلب المرسم على حامل اللوحات -->
+    <section id="hero" class="relative flex items-center pt-28 pb-12 md:pt-36 md:pb-16 px-6 z-10 overflow-hidden">
+        <!-- عناصر فنية عائمة: ريشة، أنابيب ألوان، وقصاصات رسم -->
+        <div class="absolute -top-6 right-10 opacity-15 select-none pointer-events-none text-9xl">🖌️</div>
+        <div class="absolute bottom-10 left-12 opacity-15 select-none pointer-events-none text-8xl">📐</div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- الجانب الأيمن: النص الفني، الفلسفة والريشة -->
+            <div class="lg:col-span-6 space-y-6 text-right">
+               
+
+                <div class="space-y-4">
+                    <!-- اسم الفنانة بارز وضخم كعنوان فني رئيسي -->
+                    <div class="space-y-1">
+                        <span class="text-sm md:text-base font-bold text-amber-800/80 font-sans tracking-wide block">
+                            مرسم الفنانة التشكيلية
+                        </span>
+                        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold font-art text-amber-950 leading-tight">
+                            أنا <span class="brush-highlight text-[#b85d34] inline-block drop-shadow-sm">مريم جمال</span>
+                        </h1>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold font-art text-amber-900/90 leading-snug">
+                        حيث تتحول المشاعر إلى ضربات ريشة تنبض بالحياة
+                    </h2>
+
+                    <p class="text-base md:text-lg text-amber-900/80 font-medium font-calligraphy leading-relaxed">
+                        أسافر عبر طبقات الألوان الزيتية والأكريليك، لأنسج من بياض الكانفاس عوالم بصرية تخاطب الوجدان وتخلد عمق اللحظات الإنسانية.
+                    </p>
+                </div>
+
+                <!-- أزرار التفاعل الفنية -->
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#gallery" class="px-8 py-4 rounded-2xl bg-[#b85d34] text-white font-bold hover:bg-[#9e4c27] transition-all duration-300 shadow-xl shadow-[#b85d34]/25 flex items-center gap-3 group">
+                        <span>تجوّل في المعرض الفني</span>
+                    </a>
+                    <a href="#contact" class="px-7 py-4 rounded-2xl bg-white/90 text-amber-950 font-bold hover:bg-amber-50 transition border-2 border-amber-900/20 shadow-xs flex items-center gap-2">
+                        <span>اطلب لوحة مخصصة</span>
+                    </a>
+                </div>
+
+                <!-- أوسمة المرسم والإنجاز الفني -->
+                <div class="grid grid-cols-3 gap-4 pt-4 border-t border-amber-900/10">
+                    <div class="text-center md:text-right">
+                        <span class="block text-2xl font-black font-art text-[var(--art-primary)]">+50</span>
+                        <span class="text-xs font-semibold text-amber-900/70">لوحة كانفاس أصلية</span>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="block text-2xl font-black font-art text-[var(--art-gold)]">7+</span>
+                        <span class="text-xs font-semibold text-amber-900/70">سنوات شغف وتجريب</span>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="block text-2xl font-black font-art text-[var(--art-secondary)]">100%</span>
+                        <span class="text-xs font-semibold text-amber-900/70">صناعة يدوية أصيلة</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الجانب الأيسر: حامل اللوحات الخشبي الواقعي (Wooden Studio Easel) واللوحة المختارة بأبعاد متناسقة وأصغر ارتفاعاً -->
+            <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+                
+                <!-- عناصر الحامل الخشبي المصغّر والمتناسق -->
+                <div class="relative w-full max-w-[320px] sm:max-w-[350px] flex flex-col items-center select-none pt-2">
+                    <!-- سارية الحامل العلوية مع المقبض الخشبي -->
+                    <div class="easel-mast h-10 relative -mb-1.5 z-0">
+                        <div class="w-6 h-3 bg-amber-900 border border-amber-950 rounded -mr-1.5 shadow-sm"></div>
+                    </div>
+
+                    <!-- إطار اللوحة المعلقة على الحامل بأبعاد متناسقة - Slider -->
+                    <div class="relative z-20 w-full group" id="easel-slider-wrapper"
+                         onmouseenter="pauseEaselSlider()" onmouseleave="resumeEaselSlider()">
+
+                        <!-- وسم زيتي على اللوحة -->
+                        <div class="absolute -top-3.5 -right-3 z-30 bg-amber-900 text-amber-100 text-[11px] px-3 py-1 rounded-full font-bold shadow-md border border-amber-700 flex items-center gap-1">
+                            <span id="hero-badge-text">لوحة الأسبوع: ترانيم الفجر</span>
+                        </div>
+
+                        <!-- إطار خشبي ملكي فخم للوحة -->
+                        <div class="art-frame-wood bg-neutral-900 rounded-lg p-2 transition-transform duration-500 group-hover:scale-[1.01]">
+                            <div class="relative aspect-[4/3.6] max-h-[300px] sm:max-h-[330px] rounded overflow-hidden bg-stone-900">
+
+                                <!-- الصور المتزلجة -->
+                                <div id="easel-slides" class="absolute inset-0">
+                                    <!-- الشرائح ستُوَلَّد بالجافاسكريبت -->
+                                </div>
+
+                                <!-- طبقة تدرج لونية -->
+                                <div class="absolute inset-0 z-[2] bg-gradient-to-t from-stone-950/75 via-transparent to-stone-950/15 pointer-events-none"></div>
+
+                                <!-- زر السابق -->
+                                <button id="easel-prev" onclick="moveEaselSlider(-1)"
+                                    class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 text-white text-lg flex items-center justify-center shadow-lg transition hover:scale-110 active:scale-95 backdrop-blur-sm border border-white/10"
+                                    aria-label="السابق">›</button>
+
+                                <!-- زر التالي -->
+                                <button id="easel-next" onclick="moveEaselSlider(1)"
+                                    class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 text-white text-lg flex items-center justify-center shadow-lg transition hover:scale-110 active:scale-95 backdrop-blur-sm border border-white/10"
+                                    aria-label="التالي">‹</button>
+
+                                <!-- بطاقة تعريف اللوحة -->
+                                <div class="absolute bottom-2.5 right-2.5 left-2.5 z-[10] p-2.5 sm:p-3 rounded-xl bg-black/65 backdrop-blur-md border border-white/10 text-white space-y-0.5">
+                                    <div class="flex items-center justify-between">
+                                        <h3 id="hero-painting-title" class="font-bold font-art text-base sm:text-lg text-amber-200">ترانيم الفجر والضوء</h3>
+                                        <span class="text-[10px] bg-amber-500/30 text-amber-200 border border-amber-400/40 px-2 py-0.5 rounded">زيت على كتان</span>
+                                    </div>
+                                    <p id="hero-painting-desc" class="text-[11px] text-stone-300">مقاس: 100 × 80 سم • أصباغ زيتية معتّقة</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- نقاط التنقل (Dots) -->
+                        <div id="easel-dots" class="flex items-center justify-center gap-2 mt-3"></div>
+                    </div>
+
+                    <!-- رف الحامل الخشبي السفلي (Easel Shelf) -->
+                    <div class="easel-shelf w-[105%] h-5 z-10 -mt-1 flex items-center justify-between px-5 border-b-2 border-amber-950">
+                        <div class="w-2.5 h-2.5 rounded-full bg-amber-950/80 shadow-inner"></div>
+                        <div class="text-[9px] text-amber-200/70 font-mono tracking-wider uppercase">Studio Easel</div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-amber-950/80 shadow-inner"></div>
+                    </div>
+
+                    <!-- أرجل الحامل الخشبية الثلاثية (Tripod Legs) بارتفاع مدروس -->
+                    <div class="relative w-full h-20 flex justify-center -mt-0.5 select-none pointer-events-none">
+                        <div class="easel-mast h-16 absolute top-0"></div>
+                        <div class="easel-leg-left h-20 absolute top-0 left-10"></div>
+                        <div class="easel-leg-right h-20 absolute top-0 right-10"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section / في المرسم - حكايتي مع الريشة واللون -->
+    <section id="about" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- لوح الرسم التوليدي والصور الفنية التشكيلية -->
+                <div class="lg:col-span-5 relative">
+                    <!-- ورقة إسكتش فنية مائلة -->
+                    <div class="sketch-card rounded-3xl p-4 transform -rotate-2 relative z-10 transition-transform duration-500 hover:rotate-0">
+                        <div class="relative h-[430px] rounded-2xl overflow-hidden shadow-inner">
+                            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="مرسم الفنانة مريم جمال وأدوات الألوان الزيتية" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+                            
+                            <!-- تفاصيل المرسم المكتوبة يدوياً -->
+                            <div class="absolute bottom-4 right-4 left-4 text-white">
+                                <span class="text-xs bg-amber-600/80 px-2.5 py-1 rounded-md font-bold">المرسم الخاص</span>
+                                <h4 class="font-art text-xl font-bold mt-1 text-amber-200">مكان ولادة اللوحات والألوان</h4>
+                                <p class="text-xs text-stone-300">ألوان زيتية هولندية • قماش كتان بلجيكي معالج بالجيسو</p>
+                            </div>
+                        </div>
+
+                        <!-- بطاقة لاصقة معلقة بدبوس -->
+                        <div class="washi-tape absolute -top-4 right-10 w-24 h-6 z-20"></div>
+                    </div>
+
+                    <!-- بطاقة عائمة تعبر عن ختم الجودة والأصالة الفنية -->
+                    <div class="absolute -bottom-6 -left-4 z-20 bg-white/95 border border-amber-900/20 p-5 rounded-2xl shadow-xl max-w-[240px] backdrop-blur-md">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full wax-seal flex items-center justify-center text-white font-bold text-lg shadow-md flex-shrink-0">
+                                ⚜️
+                            </div>
+                            <div>
+                                <h5 class="font-bold font-art text-amber-950 text-base">شهادة أصالة فنية</h5>
+                                <p class="text-[11px] text-amber-900/70">كل لوحة موقّعة يدوياً ومرفقة بوثيقة اقتناء معتمدة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- السيرة الفنية وفلسفة الرسم -->
+                <div class="lg:col-span-7 space-y-7 text-right">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold">
+                        <span>🏛️</span>
+                        <span>فلسفة التعبير البصري والشغف</span>
+                    </div>
+
+                    <h2 class="text-3xl md:text-5xl font-bold font-art text-amber-950 leading-tight">
+                        أرسم لأن الكلمات أحياناً تعجز عن احتواء <span class="brush-highlight text-[var(--art-primary)]">عمق الشعور</span>
+                    </h2>
+
+                    <div class="space-y-4 text-amber-900/80 text-base md:text-lg leading-relaxed font-normal">
+                        <p>
+                            بدأت رحلتي الفنية مع سحر المزج بين درجات الألوان الطبيعية وتلمّس ملمس الكتان الخام. بالنسبة لي، اللوحة ليست مجرد مساحة مغطاة بالصبغات، بل هي بوابة زمنية تحتفظ بنبض اللحظة وتوقد شعلة التأمل في عين الرائي.
+                        </p>
+                        <p>
+                            أعتمد في أسلوبي على المدرسة التأثيرية المعاصرة (Contemporary Impressionism) والمزج التجريدي (Mixed Media)، مستعينة بسكاكين الرسم (Palette Knives) لإضفاء تضاريس ملموسة وضربات حية تعكس الضوء بزوايا مختلفة على مدار ساعات اليوم.
+                        </p>
+                    </div>
+
+                    <!-- بطاقات إحصائيات المرسم مصممة كأنابيب ألوان فنية (Paint Tubes) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-3">
+                        
+                        <!-- أنبوبة لون 1 -->
+                        <div class="bg-white/80 border border-amber-900/15 p-4 rounded-2xl shadow-2xs hover:shadow-md transition text-center space-y-1 group">
+                            <div class="w-7 h-7 mx-auto rounded-full bg-[#b85d34] border-2 border-stone-200 shadow-sm group-hover:scale-110 transition-transform"></div>
+                            <span class="block text-xl font-bold font-art text-amber-950">+50 لوحة</span>
+                            <span class="block text-[11px] font-semibold text-amber-800/70">أعمال زيتية منجزة</span>
+                        </div>
+
+                        <!-- أنبوبة لون 2 -->
+                        <div class="bg-white/80 border border-amber-900/15 p-4 rounded-2xl shadow-2xs hover:shadow-md transition text-center space-y-1 group">
+                            <div class="w-7 h-7 mx-auto rounded-full bg-[#c8963e] border-2 border-stone-200 shadow-sm group-hover:scale-110 transition-transform"></div>
+                            <span class="block text-xl font-bold font-art text-amber-950">6 معارض</span>
+                            <span class="block text-[11px] font-semibold text-amber-800/70">مشاركات فنية وجوائز</span>
+                        </div>
+
+                        <!-- أنبوبة لون 3 -->
+                        <div class="bg-white/80 border border-amber-900/15 p-4 rounded-2xl shadow-2xs hover:shadow-md transition text-center space-y-1 group">
+                            <div class="w-7 h-7 mx-auto rounded-full bg-[#1f4277] border-2 border-stone-200 shadow-sm group-hover:scale-110 transition-transform"></div>
+                            <span class="block text-xl font-bold font-art text-amber-950">+80 مقتنٍ</span>
+                            <span class="block text-[11px] font-semibold text-amber-800/70">في مجموعات خاصة</span>
+                        </div>
+
+                        <!-- أنبوبة لون 4 -->
+                        <div class="bg-white/80 border border-amber-900/15 p-4 rounded-2xl shadow-2xs hover:shadow-md transition text-center space-y-1 group">
+                            <div class="w-7 h-7 mx-auto rounded-full bg-[#24584e] border-2 border-stone-200 shadow-sm group-hover:scale-110 transition-transform"></div>
+                            <span class="block text-xl font-bold font-art text-amber-950">100% يدوي</span>
+                            <span class="block text-[11px] font-semibold text-amber-800/70">بدون طباعة رقمية</span>
+                        </div>
+                    </div>
+
+                    <!-- توقيع الفنانة بخط الرقعة الفني -->
+                    <div class="pt-4 flex items-center justify-end gap-4 border-t border-amber-900/10">
+                        <div class="text-left">
+                            <span class="block font-art text-2xl text-amber-950 font-bold">مريم جمال</span>
+                            <span class="block text-xs text-amber-700 font-serif italic">Fine Artist & Painter</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full border-2 border-amber-900/30 flex items-center justify-center text-xl text-amber-800">
+                            ✒️
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section / أروقة المعرض الفني (Exhibition Gallery) -->
+    <section id="gallery" class="py-24 px-6 relative z-10 bg-white/40 backdrop-blur-sm border-y border-amber-900/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- رأس قسم المعرض -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold">
+                    <span>🖼️</span>
+                    <span>الجاليري والمعرض الدائم</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold font-art text-amber-950">
+                    أحدث اللوحات والأعمال الفنية المعروضة
+                </h2>
+                <p class="text-amber-900/80 text-base md:text-lg">
+                    كل لوحة تجربة شعورية متفردة، مرسومة على قماش الكانفاس المشدود بأفضل الصبغات الزيتية والأكريليك ذات الثباتية العالية عبر السنين.
+                </p>
+
+                <!-- أزرار تصفية المعرض بأسلوب باليتة الألوان (Filters) -->
+                <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+                    <button onclick="filterGallery('all')" class="gallery-filter-btn px-5 py-2 rounded-full bg-amber-950 text-amber-100 text-sm font-bold shadow-sm transition hover:scale-105 active-filter" data-category="all">
+                        🎨 جميع الأعمال
+                    </button>
+                    <button onclick="filterGallery('oil')" class="gallery-filter-btn px-5 py-2 rounded-full bg-white/90 text-amber-950 border border-amber-900/20 text-sm font-bold shadow-xs hover:bg-amber-100 transition hover:scale-105" data-category="oil">
+                        🖼️ لوحات زيتية
+                    </button>
+                    <button onclick="filterGallery('acrylic')" class="gallery-filter-btn px-5 py-2 rounded-full bg-white/90 text-amber-950 border border-amber-900/20 text-sm font-bold shadow-xs hover:bg-amber-100 transition hover:scale-105" data-category="acrylic">
+                        🖌️ أكريليك ومكس ميديا
+                    </button>
+                    <button onclick="filterGallery('charcoal')" class="gallery-filter-btn px-5 py-2 rounded-full bg-white/90 text-amber-950 border border-amber-900/20 text-sm font-bold shadow-xs hover:bg-amber-100 transition hover:scale-105" data-category="charcoal">
+                        ✏️ فحم وبورتريه
+                    </button>
+                </div>
+            </div>
+
+            <!-- شبكة اللوحات الفنية المعروضة بإطارات متحفية وبطاقات تعريفية كاملة -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="gallery-grid">
+                
+                <!-- لوحة 1: همسات الطبيعة -->
+                <div class="gallery-item group bg-[#fffdfa] rounded-2xl overflow-hidden border border-amber-900/20 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col" data-category="oil">
+                    <!-- إطار اللوحة المعلقة -->
+                    <div class="p-3 bg-neutral-900 relative">
+                        <div class="relative h-72 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=700&q=85" alt="لوحة همسات الطبيعة الزيتية" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button onclick="openArtworkModal('همسات الطبيعة', 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=90', 'لوحة زيتية على كانفاس كتان', '100 × 80 سم', 'تعبير تجريدي عن اندماج أشعة الشمس الذهبية مع ظلال الغابات الرطبة، مشغولة بسكين الرسم لإبراز الملمس الزيتي ثلاثي الأبعاد.', ['#2f5233', '#c8963e', '#b85d34', '#dfd3c3'], 'متاحة للاقتناء')" class="px-4 py-2 rounded-xl bg-white/95 text-amber-950 font-bold text-xs shadow-lg hover:bg-white flex items-center gap-1.5 transition">
+                                    <span>🔍</span> تكبير التفاصيل
+                                </button>
+                            </div>
+                            <span class="absolute top-3 right-3 bg-amber-950/90 backdrop-blur-md text-amber-200 text-xs px-3 py-1 rounded-full font-bold border border-amber-700/60 shadow">
+                                🎨 زيت على كانفاس
+                            </span>
+                            <span class="absolute bottom-3 left-3 bg-emerald-900/90 text-emerald-200 text-[11px] px-2.5 py-0.5 rounded-md font-bold shadow">
+                                متاحة للاقتناء
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- بطاقة المتحف التعريفية وشريط درجات الألوان المستخدمة -->
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">همسات الطبيعة</h3>
+                                <span class="text-xs font-mono text-amber-800/60">2025</span>
+                            </div>
+                            <p class="text-amber-900/70 text-sm leading-relaxed">
+                                سيمفونية لونية تجمع بين خضرة الغابات الكثيفة وإشراقة الضوء بضربات سكين جريئة وملمس بارز.
+                            </p>
+                        </div>
+
+                        <!-- شريط الصبغات المستخدمة في هذه اللوحة -->
+                        <div class="pt-3 border-t border-amber-900/10 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-amber-800/70 font-semibold">
+                                <span>باليتة ألوان اللوحة:</span>
+                                <span>100 × 80 سم</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-6 h-6 rounded-full bg-[#2f5233] border border-white shadow-2xs" title="فيرديان غابي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#c8963e] border border-white shadow-2xs" title="مغرة ذهبية"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#b85d34] border border-white shadow-2xs" title="تيرا كوتا"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#dfd3c3] border border-white shadow-2xs" title="كتان فاتح"></span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex items-center justify-between">
+                            <a href="#contact" class="text-xs font-bold text-amber-900 hover:text-[var(--art-primary)] flex items-center gap-1 group/btn">
+                                <span>طلب استفسار أو اقتناء</span>
+                                <span class="transform group-hover/btn:-translate-x-1 transition-transform">←</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- لوحة 2: تدرجات الروح (أكريليك ومكس ميديا) -->
+                <div class="gallery-item group bg-[#fffdfa] rounded-2xl overflow-hidden border border-amber-900/20 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col" data-category="acrylic">
+                    <div class="p-3 bg-neutral-900 relative">
+                        <div class="relative h-72 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=700&q=85" alt="لوحة تدرجات الروح - أكريليك وورق ذهب" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button onclick="openArtworkModal('تدرجات الروح', 'https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1200&q=90', 'أكريليك وورق ذهب على كانفاس', '120 × 90 سم', 'تداخل جريء بين الدرجات الحارة والباردة مع لمسات رقيقة من رقائق الذهب الإيطالي عيار 24، ترمز لتحولات النفس البشرية.', ['#b83b5e', '#6a2c70', '#f08a5d', '#eeecda'], 'ضمن مجموعة خاصة')" class="px-4 py-2 rounded-xl bg-white/95 text-amber-950 font-bold text-xs shadow-lg hover:bg-white flex items-center gap-1.5 transition">
+                                    <span>🔍</span> تكبير التفاصيل
+                                </button>
+                            </div>
+                            <span class="absolute top-3 right-3 bg-amber-950/90 backdrop-blur-md text-amber-200 text-xs px-3 py-1 rounded-full font-bold border border-amber-700/60 shadow">
+                                🖌️ أكريليك ومكس ميديا
+                            </span>
+                            <span class="absolute bottom-3 left-3 bg-amber-900/90 text-amber-200 text-[11px] px-2.5 py-0.5 rounded-md font-bold shadow">
+                                في مجموعة خاصة
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">تدرجات الروح</h3>
+                                <span class="text-xs font-mono text-amber-800/60">2024</span>
+                            </div>
+                            <p class="text-amber-900/70 text-sm leading-relaxed">
+                                لوحة مشحونة بالطاقة اللونية، مستوحاة من الصراع والتصالح الداخلي مع لمسات ورق الذهب.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-amber-900/10 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-amber-800/70 font-semibold">
+                                <span>باليتة ألوان اللوحة:</span>
+                                <span>120 × 90 سم</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-6 h-6 rounded-full bg-[#b83b5e] border border-white shadow-2xs" title="وردي قرمزي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#6a2c70] border border-white shadow-2xs" title="بنفسجي ملكي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#f08a5d] border border-white shadow-2xs" title="مرجاني دافئ"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#eeecda] border border-white shadow-2xs" title="عاجي ناصع"></span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex items-center justify-between">
+                            <a href="#contact" class="text-xs font-bold text-amber-900 hover:text-[var(--art-primary)] flex items-center gap-1 group/btn">
+                                <span>طلب لوحة مخصصة مشابهة</span>
+                                <span class="transform group-hover/btn:-translate-x-1 transition-transform">←</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- لوحة 3: ملامح صامتة (فحم وبورتريه) -->
+                <div class="gallery-item group bg-[#fffdfa] rounded-2xl overflow-hidden border border-amber-900/20 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col" data-category="charcoal">
+                    <div class="p-3 bg-neutral-900 relative">
+                        <div class="relative h-72 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=700&q=85" alt="لوحة ملامح صامتة - فحم ورصاص" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button onclick="openArtworkModal('ملامح صامتة', 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=1200&q=90', 'فحم نباتي ورصاص على ورق كانسون', '70 × 50 سم', 'دراسة أكاديمية متعمقة في تفاصيل نظرة العين والظلال الناعمة، مع معالجة سطحية بمثبت الورنيش غير اللامع لحفظ جزيئات الفحم.', ['#1a1a1a', '#4a4a4a', '#8c8c8c', '#eaeaea'], 'متاحة للاقتناء')" class="px-4 py-2 rounded-xl bg-white/95 text-amber-950 font-bold text-xs shadow-lg hover:bg-white flex items-center gap-1.5 transition">
+                                    <span>🔍</span> تكبير التفاصيل
+                                </button>
+                            </div>
+                            <span class="absolute top-3 right-3 bg-amber-950/90 backdrop-blur-md text-amber-200 text-xs px-3 py-1 rounded-full font-bold border border-amber-700/60 shadow">
+                                ✏️ فحم وبورتريه
+                            </span>
+                            <span class="absolute bottom-3 left-3 bg-emerald-900/90 text-emerald-200 text-[11px] px-2.5 py-0.5 rounded-md font-bold shadow">
+                                متاحة للاقتناء
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">ملامح صامتة</h3>
+                                <span class="text-xs font-mono text-amber-800/60">2025</span>
+                            </div>
+                            <p class="text-amber-900/70 text-sm leading-relaxed">
+                                بورتريه تعبيري يبرز دفء المشاعر الإنسانية بدقة الظلال التناغمية والتفاصيل الدقيقة.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-amber-900/10 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-amber-800/70 font-semibold">
+                                <span>باليتة ألوان اللوحة:</span>
+                                <span>70 × 50 سم</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-6 h-6 rounded-full bg-[#1a1a1a] border border-white shadow-2xs" title="فحم أسود عميق"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#4a4a4a] border border-white shadow-2xs" title="رمادي فحمي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#8c8c8c] border border-white shadow-2xs" title="رصاص هادئ"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#eaeaea] border border-white shadow-2xs" title="ورق قطني خام"></span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex items-center justify-between">
+                            <a href="#contact" class="text-xs font-bold text-amber-900 hover:text-[var(--art-primary)] flex items-center gap-1 group/btn">
+                                <span>طلب استفسار أو اقتناء</span>
+                                <span class="transform group-hover/btn:-translate-x-1 transition-transform">←</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- لوحة 4: عبق الأندلس (زيت على كانفاس) -->
+                <div class="gallery-item group bg-[#fffdfa] rounded-2xl overflow-hidden border border-amber-900/20 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col" data-category="oil">
+                    <div class="p-3 bg-neutral-900 relative">
+                        <div class="relative h-72 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=700&q=85" alt="لوحة عبق الأندلس" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button onclick="openArtworkModal('عبق الأندلس', 'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1200&q=90', 'ألوان زيتية كلاسيكية معتقة', '110 × 85 سم', 'لوحة مستوحاة من فناء الحمراء بالأندلس، تتناغم فيها أقواس العمارة الإسلامية مع انعكاسات الماء وعبق زهور الياسمين.', ['#845422', '#c39b52', '#2f4858', '#f4ebd0'], 'متاحة للاقتناء')" class="px-4 py-2 rounded-xl bg-white/95 text-amber-950 font-bold text-xs shadow-lg hover:bg-white flex items-center gap-1.5 transition">
+                                    <span>🔍</span> تكبير التفاصيل
+                                </button>
+                            </div>
+                            <span class="absolute top-3 right-3 bg-amber-950/90 backdrop-blur-md text-amber-200 text-xs px-3 py-1 rounded-full font-bold border border-amber-700/60 shadow">
+                                🎨 زيت على كانفاس
+                            </span>
+                            <span class="absolute bottom-3 left-3 bg-emerald-900/90 text-emerald-200 text-[11px] px-2.5 py-0.5 rounded-md font-bold shadow">
+                                متاحة للاقتناء
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">عبق الأندلس</h3>
+                                <span class="text-xs font-mono text-amber-800/60">2024</span>
+                            </div>
+                            <p class="text-amber-900/70 text-sm leading-relaxed">
+                                استحضار بصري لتاريخ الزخرفة والضوء الأندلسي بضربات زيتية كلاسيكية عريقة.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-amber-900/10 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-amber-800/70 font-semibold">
+                                <span>باليتة ألوان اللوحة:</span>
+                                <span>110 × 85 سم</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-6 h-6 rounded-full bg-[#845422] border border-white shadow-2xs" title="بني أندلسي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#c39b52] border border-white shadow-2xs" title="ذهب معتق"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#2f4858] border border-white shadow-2xs" title="كحلي فيروزي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#f4ebd0] border border-white shadow-2xs" title="جص قرطبي"></span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex items-center justify-between">
+                            <a href="#contact" class="text-xs font-bold text-amber-900 hover:text-[var(--art-primary)] flex items-center gap-1 group/btn">
+                                <span>طلب استفسار أو اقتناء</span>
+                                <span class="transform group-hover/btn:-translate-x-1 transition-transform">←</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- لوحة 5: رقصة الكوبالت (مكس ميديا وتجريد) -->
+                <div class="gallery-item group bg-[#fffdfa] rounded-2xl overflow-hidden border border-amber-900/20 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col" data-category="acrylic">
+                    <div class="p-3 bg-neutral-900 relative">
+                        <div class="relative h-72 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=700&q=85" alt="لوحة رقصة الكوبالت" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button onclick="openArtworkModal('رقصة الكوبالت', 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1200&q=90', 'أكريليك ووسائط متعددة مدمجة', '90 × 90 سم', 'أمواج متلاحمة من الأزرق الكوبالتي والأبيض الصدفي تعبر عن حركة البحر المتلاطمة في شواطئ الإسكندرية.', ['#0f4c81', '#1b9aaa', '#e8f1f5', '#05004e'], 'ضمن مجموعة خاصة')" class="px-4 py-2 rounded-xl bg-white/95 text-amber-950 font-bold text-xs shadow-lg hover:bg-white flex items-center gap-1.5 transition">
+                                    <span>🔍</span> تكبير التفاصيل
+                                </button>
+                            </div>
+                            <span class="absolute top-3 right-3 bg-amber-950/90 backdrop-blur-md text-amber-200 text-xs px-3 py-1 rounded-full font-bold border border-amber-700/60 shadow">
+                                🖌️ أكريليك ومكس ميديا
+                            </span>
+                            <span class="absolute bottom-3 left-3 bg-amber-900/90 text-amber-200 text-[11px] px-2.5 py-0.5 rounded-md font-bold shadow">
+                                في مجموعة خاصة
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">رقصة الكوبالت</h3>
+                                <span class="text-xs font-mono text-amber-800/60">2025</span>
+                            </div>
+                            <p class="text-amber-900/70 text-sm leading-relaxed">
+                                حركة بصرية تجريدية غنية بطبقات اللون الأزرق الساحلي وانعكاسات زبد البحر.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-amber-900/10 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-amber-800/70 font-semibold">
+                                <span>باليتة ألوان اللوحة:</span>
+                                <span>90 × 90 سم</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-6 h-6 rounded-full bg-[#0f4c81] border border-white shadow-2xs" title="كوبالت كلاسيكي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#1b9aaa] border border-white shadow-2xs" title="فيروزي هادئ"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#e8f1f5] border border-white shadow-2xs" title="أبيض زبدي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#05004e] border border-white shadow-2xs" title="أزرق ليلي"></span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex items-center justify-between">
+                            <a href="#contact" class="text-xs font-bold text-amber-900 hover:text-[var(--art-primary)] flex items-center gap-1 group/btn">
+                                <span>طلب عمل مشابه</span>
+                                <span class="transform group-hover/btn:-translate-x-1 transition-transform">←</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- لوحة 6: تأملات في الظل (فحم وباستيل) -->
+                <div class="gallery-item group bg-[#fffdfa] rounded-2xl overflow-hidden border border-amber-900/20 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col" data-category="charcoal">
+                    <div class="p-3 bg-neutral-900 relative">
+                        <div class="relative h-72 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=700&q=85" alt="لوحة تأملات في الظل - رسم بالفحم والباستيل" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy" decoding="async">
+                            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button onclick="openArtworkModal('تأملات في الظل', 'https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?auto=format&fit=crop&w=1200&q=90', 'باستيل ناعم وفحم روسي على ورق قطني', '80 × 60 سم', 'دراسة أكاديمية وتعبير بصري يجسد تدرجات الظل والنور الهادئ باستخدام الفحم الطبيعي والباستيل الترابي.', ['#3a2c28', '#8c6d62', '#d7b899', '#f3eae1'], 'متاحة للاقتناء')" class="px-4 py-2 rounded-xl bg-white/95 text-amber-950 font-bold text-xs shadow-lg hover:bg-white flex items-center gap-1.5 transition">
+                                    <span>🔍</span> تكبير التفاصيل
+                                </button>
+                            </div>
+                            <span class="absolute top-3 right-3 bg-amber-950/90 backdrop-blur-md text-amber-200 text-xs px-3 py-1 rounded-full font-bold border border-amber-700/60 shadow">
+                                ✏️ فحم وباستيل
+                            </span>
+                            <span class="absolute bottom-3 left-3 bg-emerald-900/90 text-emerald-200 text-[11px] px-2.5 py-0.5 rounded-md font-bold shadow">
+                                متاحة للاقتناء
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">تأملات في الظل</h3>
+                                <span class="text-xs font-mono text-amber-800/60">2025</span>
+                            </div>
+                            <p class="text-amber-900/70 text-sm leading-relaxed">
+                                دراسة هادئة للملامح البشرية وتدرجات الباستيل الترابي الناعم مع لمسات الفحم.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-amber-900/10 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] text-amber-800/70 font-semibold">
+                                <span>باليتة ألوان اللوحة:</span>
+                                <span>80 × 60 سم</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-6 h-6 rounded-full bg-[#3a2c28] border border-white shadow-2xs" title="بني محروق"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#8c6d62] border border-white shadow-2xs" title="باستيل ترابي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#d7b899] border border-white shadow-2xs" title="بيج طبيعي"></span>
+                                <span class="w-6 h-6 rounded-full bg-[#f3eae1] border border-white shadow-2xs" title="طباشيري هادئ"></span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex items-center justify-between">
+                            <a href="#contact" class="text-xs font-bold text-amber-900 hover:text-[var(--art-primary)] flex items-center gap-1 group/btn">
+                                <span>طلب استفسار أو اقتناء</span>
+                                <span class="transform group-hover/btn:-translate-x-1 transition-transform">←</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Services Section / خدمات المرسم والتكليف الفني (Atelier Services) -->
+    <section id="services" class="py-24 px-6 relative z-10 bg-white/60 backdrop-blur-md border-y border-amber-900/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold">
+                    <span>✨</span>
+                    <span>خدمات حصرية للمقتنين والديكور</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold font-art text-amber-950">
+                    كيف يمكن لمرسمي أن يخدم فكرتك؟
+                </h2>
+                <p class="text-amber-900/80 text-base md:text-lg">
+                    أقدم تجارب فنية متكاملة صممت خصيصاً لتلبي شغف عشاق الفن، من اللوحات المخصصة إلى التوجيه والاستشارات.
+                </p>
+            </div>
+
+            <!-- بطاقات الخدمات الفنية الأربعة بتصميم ورق الرسم الأنيق -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- خدمة 1: رسم لوحة خاصة حسب الطلب -->
+                <div class="group bg-[#fffdfa] border-2 border-amber-900/15 rounded-3xl p-8 hover:border-[var(--art-primary)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl space-y-6 relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-700 to-amber-500 text-white flex items-center justify-center text-3xl shadow-lg shadow-amber-800/20 group-hover:rotate-6 transition-transform">
+                        🖼️
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">
+                            رسم لوحات مخصصة (Commission)
+                        </h3>
+                        <p class="text-amber-900/70 text-sm leading-relaxed">
+                            تنفيذ لوحة زيتية أو أكريليك بمقاس وألوان متناغمة مع ديكور منزلك أو مساحتك الخاصة، من الفكرة الأولية حتى التسليم المؤطر.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-amber-900/80 font-semibold pt-2 border-t border-amber-900/10">
+                        <li class="flex items-center gap-2"><span>✔️</span> اختيار المقاس ونوع الكانفاس بحرية</li>
+                        <li class="flex items-center gap-2"><span>✔️</span> معاينة الإسكتش الأولي قبل التلوين</li>
+                        <li class="flex items-center gap-2"><span>✔️</span> شهادة أصالة موقعة ومختومة</li>
+                    </ul>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition pt-2">
+                        <span>اطلب تسعيرة لعملك الفني</span>
+                        <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                    </a>
+                </div>
+
+                <!-- خدمة 2: بورتريه شخصي حيوي -->
+                <div class="group bg-[#fffdfa] border-2 border-amber-900/15 rounded-3xl p-8 hover:border-[var(--art-primary)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl space-y-6 relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-700 to-amber-600 text-white flex items-center justify-center text-3xl shadow-lg shadow-rose-800/20 group-hover:rotate-6 transition-transform">
+                        ✍️
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">
+                            بورتريه شخصي تشكيلي
+                        </h3>
+                        <p class="text-amber-900/70 text-sm leading-relaxed">
+                            تخليد ملامحك أو ملامح من تحب في بورتريه يدوي نابض بالأحاسيس باستخدام الفحم النباتي، الباستيل، أو ألوان الزيت العريقة.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-amber-900/80 font-semibold pt-2 border-t border-amber-900/10">
+                        <li class="flex items-center gap-2"><span>✔️</span> رسم يدوي من الصور الشخصية عالية الجودة</li>
+                        <li class="flex items-center gap-2"><span>✔️</span> التقاط الروح والعمق التعبيري للشخصية</li>
+                        <li class="flex items-center gap-2"><span>✔️</span> تغليف فاخر مناسب للإهداء الملكي</li>
+                    </ul>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition pt-2">
+                        <span>اطلب بورتريه خاص</span>
+                        <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                    </a>
+                </div>
+
+                <!-- خدمة 3: استشارات فنية واقتناء للمجموعات -->
+                <div class="group bg-[#fffdfa] border-2 border-amber-900/15 rounded-3xl p-8 hover:border-[var(--art-primary)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl space-y-6 relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-700 to-teal-600 text-white flex items-center justify-center text-3xl shadow-lg shadow-emerald-800/20 group-hover:rotate-6 transition-transform">
+                        🏛️
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="font-art text-2xl font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition">
+                            استشارات اقتناء وتنسيق فني
+                        </h3>
+                        <p class="text-amber-900/70 text-sm leading-relaxed">
+                            مساعدة مقتني الأعمال الفنية، الفنادق والشركات في اختيار اللوحات وتنسيق الإضاءة والأطر المناسبة لكل فراغ معماري.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-amber-900/80 font-semibold pt-2 border-t border-amber-900/10">
+                        <li class="flex items-center gap-2"><span>✔️</span> دراسة باليتة ألوان الجدران والأثاث</li>
+                        <li class="flex items-center gap-2"><span>✔️</span> اقتراح حلول فنية متكاملة ومؤثرة</li>
+                        <li class="flex items-center gap-2"><span>✔️</span> تنسيق مجموعات فنية متجانسة</li>
+                    </ul>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-amber-950 group-hover:text-[var(--art-primary)] transition pt-2">
+                        <span>احجز جلسة استشارية</span>
+                        <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Collectors Reviews / رسائل المقتنين وزوار المعارض -->
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto space-y-12">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold">
+                    <span>📜</span>
+                    <span>سجل ضيوف المرسم والمقتنين</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold font-art text-amber-950">
+                    أصداء اللوحات في قلوب عشاق الفن
+                </h2>
+            </div>
+
+            <!-- بطاقات كأنها صفحات من سجل زوار المعرض الفني -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- تقييم 1 -->
+                <div class="sketch-card p-6 rounded-3xl space-y-4 relative">
+                    <div class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-white text-xs shadow-sm absolute -top-3 right-6">
+                        ⚜️
+                    </div>
+                    <p class="text-amber-950/80 text-sm font-calligraphy text-base leading-relaxed pt-2">
+                        "اقتنيت لوحة 'همسات الطبيعة' لصالة منزلي، وفي كل مرة يتبدل فيها ضوء الشمس يتغير إحساس اللوحة تماماً. براعة ضربات السكين وتناغم الألوان فوق الوصف."
+                    </p>
+                    <div class="pt-3 border-t border-amber-900/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-amber-950 text-sm">د. طارق السعيد</h4>
+                            <span class="text-[11px] text-amber-800/70">مقتنٍ ومهتم بالفن التشكيلي</span>
+                        </div>
+                        <span class="text-xs text-amber-600 font-bold">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- تقييم 2 -->
+                <div class="sketch-card p-6 rounded-3xl space-y-4 relative">
+                    <div class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-white text-xs shadow-sm absolute -top-3 right-6">
+                        ⚜️
+                    </div>
+                    <p class="text-amber-950/80 text-sm font-calligraphy text-base leading-relaxed pt-2">
+                        "طلبت بورتريه بالفحم لوالدي في مناسبة تقاعده، دقة الملامح والعمق الإنساني في النظرة أبكت الجميع تأثراً. مريم فنانة استثنائية ترسم بالقلب قبل الريشة."
+                    </p>
+                    <div class="pt-3 border-t border-amber-900/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-amber-950 text-sm">نوران عبد الحميد</h4>
+                            <span class="text-[11px] text-amber-800/70">مهندسة ديكور داخلي</span>
+                        </div>
+                        <span class="text-xs text-amber-600 font-bold">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- تقييم 3 -->
+                <div class="sketch-card p-6 rounded-3xl space-y-4 relative">
+                    <div class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-white text-xs shadow-sm absolute -top-3 right-6">
+                        ⚜️
+                    </div>
+                    <p class="text-amber-950/80 text-sm font-calligraphy text-base leading-relaxed pt-2">
+                        "شهادة الأصالة المغلفة والتغليف الخشبي الآمن للوحة وصولاً للإمارات كان غاية في الاحترافية. اللوحة قطعة محورية تلفت أنظار جميع ضيوفنا."
+                    </p>
+                    <div class="pt-3 border-t border-amber-900/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-amber-950 text-sm">م. خالد المنصوري</h4>
+                            <span class="text-[11px] text-amber-800/70">دبي، الإمارات العربية المتحدة</span>
+                        </div>
+                        <span class="text-xs text-amber-600 font-bold">★★★★★</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Commission & Contact Section / طلب لوحة فنية خاصة (Art Commission Form) -->
+    <section id="contact" class="py-24 px-6 relative z-10 bg-gradient-to-t from-[#f5efe4] via-transparent to-transparent">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-bold">
+                    <span>💌</span>
+                    <span>استمارة التكليف الفني والتواصل</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold font-art text-amber-950">
+                    لنتحدث عن لوحتك القادمة
+                </h2>
+                <p class="text-amber-900/80 text-base">
+                    سواء كانت رغبتك في اقتناء لوحة معروضة، أو تكليف فني لعمل مخصص يزين مساحتك، يسعدني جداً استقبال رسالتك.
+                </p>
+            </div>
+
+            <!-- نموذج التكليف الفني المصمم كوثيقة مرسم رسمية -->
+            <div class="bg-[#fffefb] border-2 border-amber-900/20 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <!-- أشرطة ورق كراسة الرسم الفنية في الحواف -->
+                <div class="washi-tape absolute -top-3 left-16 w-32 h-7 z-10"></div>
+                <div class="washi-tape absolute -bottom-3 right-16 w-32 h-7 z-10"></div>
+
+                <form class="space-y-6" onsubmit="handleCommissionSubmit(event)">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- الاسم الكريم -->
+                        <div class="space-y-2 text-right">
+                            <label class="block text-sm font-bold text-amber-950 flex items-center gap-1.5">
+                                <span>👤</span>
+                                <span>اسمك الكريم</span>
+                            </label>
+                            <input type="text" required placeholder="مثال: سارة محمد" class="w-full bg-[#fdfbf7] border border-amber-900/20 rounded-xl px-4 py-3.5 text-amber-950 placeholder-amber-900/40 focus:outline-none focus:border-[var(--art-primary)] transition shadow-inner">
+                        </div>
+
+                        <!-- البريد الإلكتروني أو الهاتف -->
+                        <div class="space-y-2 text-right">
+                            <label class="block text-sm font-bold text-amber-950 flex items-center gap-1.5">
+                                <span>✉️</span>
+                                <span>البريد الإلكتروني أو رقم الواتساب</span>
+                            </label>
+                            <input type="text" required placeholder="name@example.com / +20..." class="w-full bg-[#fdfbf7] border border-amber-900/20 rounded-xl px-4 py-3.5 text-amber-950 placeholder-amber-900/40 focus:outline-none focus:border-[var(--art-primary)] transition shadow-inner">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- الخامة الفنية المفضلة -->
+                        <div class="space-y-2 text-right">
+                            <label class="block text-sm font-bold text-amber-950 flex items-center gap-1.5">
+                                <span>🎨</span>
+                                <span>الخامة والتقنية المرغوبة</span>
+                            </label>
+                            <select class="w-full bg-[#fdfbf7] border border-amber-900/20 rounded-xl px-4 py-3.5 text-amber-950 focus:outline-none focus:border-[var(--art-primary)] transition shadow-inner">
+                                <option value="oil">ألوان زيتية على قماش الكانفاس (الأكثر طلباً)</option>
+                                <option value="acrylic">أكريليك ومكس ميديا مع ورق ذهب</option>
+                                <option value="charcoal">فحم نباتي وبورتريه كلاسيكي</option>
+                                <option value="watercolor">ألوان مائية على ورق قطني</option>
+                                <option value="undecided">أحتاج استشارة الفنانة لتحديد الأنسب</option>
+                            </select>
+                        </div>
+
+                        <!-- المقاس التقريبي للوحة -->
+                        <div class="space-y-2 text-right">
+                            <label class="block text-sm font-bold text-amber-950 flex items-center gap-1.5">
+                                <span>📐</span>
+                                <span>المقاس المقترح للكانفاس</span>
+                            </label>
+                            <select class="w-full bg-[#fdfbf7] border border-amber-900/20 rounded-xl px-4 py-3.5 text-amber-950 focus:outline-none focus:border-[var(--art-primary)] transition shadow-inner">
+                                <option value="small">صغير (40 × 50 سم أو 50 × 70 سم)</option>
+                                <option value="medium">متوسط (70 × 90 سم أو 80 × 100 سم)</option>
+                                <option value="large">كبير / جداري (100 × 120 سم أو أكبر)</option>
+                                <option value="custom">مقاس مخصص حسب الفراغ المعماري</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- تفاصيل الفكرة والرؤية اللونية -->
+                    <div class="space-y-2 text-right">
+                        <label class="block text-sm font-bold text-amber-950 flex items-center gap-1.5">
+                            <span>📝</span>
+                            <span>تفاصيل اللوحة، الألوان المفضلة، أو المناسبة</span>
+                        </label>
+                        <textarea rows="4" required placeholder="صِف لي فكرتك، الألوان التي تفضلها في الغرفة، أو اسم اللوحة المعروضة التي ترغب باقتنائها..." class="w-full bg-[#fdfbf7] border border-amber-900/20 rounded-xl px-4 py-3.5 text-amber-950 placeholder-amber-900/40 focus:outline-none focus:border-[var(--art-primary)] transition shadow-inner"></textarea>
+                    </div>
+
+                    <!-- زر إرسال التكليف الفني -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-2 text-xs text-amber-900/70 font-semibold">
+                            <span class="w-3 h-3 rounded-full bg-emerald-600 inline-block animate-pulse"></span>
+                            <span>المرسم يستقبل حالياً طلبات التكليف للشهر الحالي</span>
+                        </div>
+                        
+                        <button type="submit" class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-l from-[var(--art-primary)] to-[var(--art-gold)] text-white font-bold text-base hover:shadow-xl hover:shadow-amber-900/25 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                            <span>🖌️</span>
+                            <span>إرسال طلب التكليف الفني</span>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal / نافذة معاينة اللوحة المكبرة بتفاصيل ضربات الريشة (Artwork Lightbox) -->
+    <div id="artwork-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 transition-opacity duration-300" onclick="closeArtworkModal(event)">
+        <div class="bg-[#fcf9f2] border-4 border-amber-900/30 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative" onclick="event.stopPropagation()">
+            
+            <!-- زر إغلاق النافذة -->
+            <button onclick="closeArtworkModal()" class="absolute top-4 left-4 w-10 h-10 rounded-full bg-amber-950 text-white flex items-center justify-center font-bold text-lg hover:bg-amber-900 transition shadow">
+                ✕
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- صورة اللوحة داخل إطار معرض -->
+                <div class="art-frame-wood rounded-lg overflow-hidden bg-stone-900">
+                    <img id="modal-img" src="" alt="معاينة اللوحة المكبرة" class="w-full h-auto max-h-[60vh] object-cover">
+                </div>
+
+                <!-- تفاصيل العمل الفني والباليتة -->
+                <div class="space-y-5 text-right">
+                    <span id="modal-status" class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold border border-emerald-300">
+                        متاحة للاقتناء
+                    </span>
+                    <h3 id="modal-title" class="font-art text-3xl font-bold text-amber-950"></h3>
+                    
+                    <div class="space-y-1 text-sm text-amber-900/80 font-medium">
+                        <p><strong class="text-amber-950">الخامة:</strong> <span id="modal-medium"></span></p>
+                        <p><strong class="text-amber-950">المقاس:</strong> <span id="modal-dims"></span></p>
+                    </div>
+
+                    <p id="modal-desc" class="text-sm text-amber-900/70 leading-relaxed border-t border-amber-900/10 pt-3"></p>
+
+                    <!-- باليتة الأصباغ المستعملة -->
+                    <div class="space-y-2 pt-2">
+                        <span class="text-xs font-bold text-amber-950 block">الأصباغ المستخدمة في مزيج اللوحة:</span>
+                        <div id="modal-palette" class="flex items-center gap-2"></div>
+                    </div>
+
+                    <div class="pt-4 border-t border-amber-900/10 flex items-center gap-3">
+                        <a href="#contact" onclick="closeArtworkModal()" class="flex-1 py-3 text-center rounded-xl bg-amber-950 text-white font-bold text-sm hover:bg-amber-900 transition shadow">
+                            اقتناء أو حجز هذه اللوحة
+                        </a>
+                        <button onclick="closeArtworkModal()" class="px-5 py-3 rounded-xl bg-amber-100 text-amber-950 font-bold text-sm hover:bg-amber-200 transition">
+                            إغلاق
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer / الفوتر الفني للمرسم -->
+    <footer class="py-16 px-6 bg-amber-950 text-amber-100/90 relative z-10 border-t-4 border-amber-800/60">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center justify-between">
+                
+                <!-- هوية المرسم -->
+                <div class="md:col-span-5 space-y-4 text-right">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🎨</span>
+                        <div>
+                            <span class="block font-art text-2xl font-bold text-amber-200">مرسم مريم جمال</span>
+                            <span class="block text-xs text-amber-400/80 font-sans tracking-wider">FINE ART STUDIO & GALLERY</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-amber-300/70 leading-relaxed max-w-sm">
+                        مساحة بصرية مكرسة لجمال الفن التشكيلي، أصالة الرسم الزيتي، والاحتفاء بضربات الريشة التي تخلد المشاعر على نسيج الكانفاس.
+                    </p>
+                </div>
+
+                <!-- مقولة فنية ملهمة -->
+                <div class="md:col-span-7 bg-amber-900/40 border border-amber-800/60 p-6 rounded-2xl text-center md:text-right space-y-2">
+                    <span class="text-amber-400 font-calligraphy text-lg block">"الرسم ليس مجرد ما تراه عيناك، بل ما تجعل أرواح الآخرين تراه وتشعر به."</span>
+                    <span class="text-xs text-amber-300/60 block">— إدغار ديجا | Edgar Degas</span>
+                </div>
+
+            </div>
+
+            <!-- حقوق الملكية والروابط -->
+            <div class="pt-8 border-t border-amber-900/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-amber-400/60">
+                <p>© 2026 جميع الأعمال واللوحات الفنية محفوظة للفنانة التشكيلية مريم جمال.</p>
+                <div class="flex items-center gap-6 text-amber-300/80 font-semibold">
+                    <a href="#about" class="hover:text-amber-200 transition">نبذة عني</a>
+                    <a href="#gallery" class="hover:text-amber-200 transition">المعرض</a>
+                    <a href="#services" class="hover:text-amber-200 transition">الخدمات</a>
+                    <a href="#contact" class="hover:text-amber-200 transition">طلب تكليف فني</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- سكريبت التفاعل الفني (ملف خارجي) -->
+    <script src="script.js" defer></script>
+</body>
+</html>
